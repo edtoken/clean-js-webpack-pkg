@@ -1,0 +1,63 @@
+{
+  "name": "clean-js-webpack-pkg",
+  "version": "0.0.1",
+  "description": "Very simple javascript package to help to configure the npm",
+  "main": "./index.js",
+  "repository": "https://github.com/edtoken/clean-js-webpack-pkg",
+  "keywords": [
+    "npm starter kit",
+    "javascript starter kit",
+    "starter kit",
+    "javascript package",
+    "clean javascript package",
+    "publish package",
+    "publish javascript package"
+  ],
+  "files": [
+    "dist"
+  ],
+  "author": "Eduard Titov <editied@gmail.com>",
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.githubusercontent.com/edtoken/clean-js-webpack-pkg/master/LICENSE"
+    }
+  ],
+  "scripts": {
+    "build": "webpack",
+    "test": "nyc --reporter=lcov --reporter=html --reporter=text-summary mocha --opts ./mocha.opts --require ./.env.js"
+  },
+  "nyc": {
+    "watermarks": {
+      "lines": [
+        80,
+        95
+      ],
+      "functions": [
+        80,
+        95
+      ],
+      "branches": [
+        80,
+        95
+      ],
+      "statements": [
+        80,
+        95
+      ]
+    }
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "@istanbuljs/nyc-config-babel": "^2.1.1",
+    "babel-plugin-istanbul": "^5.1.4",
+    "chai": "^4.2.0",
+    "dotenv": "^8.0.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  }
+}

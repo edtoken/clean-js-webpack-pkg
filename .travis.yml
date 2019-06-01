@@ -1,0 +1,21 @@
+sudo: false
+language: node_js
+node_js:
+- '10'
+cache:
+  directories:
+  - "$HOME/.npm"
+branches:
+  only:
+  - master
+  - "/^v\\d+\\./"
+script: yarn test && yarn build
+deploy:
+  skip_cleanup: true
+  provider: npm
+  email: editied@gmail.com
+  api_key:
+    secure: "$SECURE_KEY"
+  on:
+    tags: false
+    repo: edtoken/clean-js-webpack-pkg
